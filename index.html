@@ -168,20 +168,29 @@
           location.reload();
         }
       
-      function takeValue() {
+        function takeValue() {
         let userName1 = document.querySelector("#userName1").value; 
         let userName2 = document.querySelector("#userName2").value;
 
         let message = document.querySelector("#message");
         let message2 = document.querySelector("#message2");
 
-        
-        var generatorNum = Math.floor(Math.random() * 100) + 1;
+        const min = 30;
+        const max = 100;
+        var generatorNum = Math.floor(Math.random() * (max - min + 1) + min);
 
         if(userName1 == "" || userName2 == "null")
         {
           message.innerHTML = `Enter your and crush name`;
         }
+        else if(userName2 == "mukesh" || userName2 =="Mukesh kumar" || userName2 == "Mukesh")
+        {
+          message.innerHTML = `Your love Percentage <br> with ${userName2} is ${max}% `;
+        }
+        else if(userName2 == "Gojo" || userName2 =="Satoru gojo" || userName2 == "gojo" || userName2 == "Satoru Gojo")
+        {
+          message.innerHTML = `Your love Percentage <br> with ${userName2} is 69% <br> have some fun tonight `;
+        }        
         else
         {
           message.innerHTML = `Your love Percentage <br> with ${userName2} is ${generatorNum}% `;
